@@ -1,6 +1,6 @@
 {
   "name": "@teofilomonteiro/universe-automation",
-  "version": "1.0.0",
+  "version": "1.0.1-0",
   "description": "Awesome automation for workshop",
   "main": "index.js",
   "scripts": {
