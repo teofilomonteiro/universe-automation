@@ -38,6 +38,12 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
 
-      - run: npm publish
+      - name: Check if version has been updated
+        id: check
+        uses: EndBug/version-check@v1
+        
+      - name: Publish is package.json version changed
+        if: steps.check.outputs.changed == 'true' 
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
